@@ -1,0 +1,241 @@
+:root {
+    --bg-color: #f9f5ec;
+    --text-color: #003466;
+    --accent1: #3ba790;
+    --accent2: #f0cca8;
+    --jumbotron-bg: #ffffff;
+    --button-bg: #007bff;
+    --button-text: #ffffff;
+    --toggler-icon-bg: #007bff;
+}
+
+.dark-mode {
+    --bg-color: #001f3e;
+    --text-color: #f5f5dd;
+    --accent1: #397768;
+    --accent2: #24302e;
+    --jumbotron-bg: #24302e;
+    --button-bg: #0056b3;
+    --button-text: #f5f5dd;
+    --toggler-icon-bg: #f5f5dd;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    background-color: var(--accent2) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-theme {
+    background-color: var(--accent1);
+    border: none;
+    color: var(--button-text);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-theme:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+a,
+.nav-link,
+.navbar-brand {
+    color: var(--text-color) !important;
+}
+
+.container {
+    flex: 1;
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background-color: var(--accent1) !important;
+    color: var(--button-text) !important;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: auto;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.card {
+    background-color: var(--jumbotron-bg);
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease-in-out;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    background-color: var(--jumbotron-bg);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.card-title {
+    color: var(--text-color);
+}
+
+.btn-primary,
+.btn-danger {
+    background-color: var(--button-bg) !important;
+    color: var(--button-text) !important;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover,
+.btn-danger:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.form-control {
+    border: 2px solid var(--button-bg);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--button-bg);
+    box-shadow: 0 0 10px rgba(0, 86, 179, 0.5);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.alert {
+    background-color: var(--accent1);
+    color: var(--button-text);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.announcements h2 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.text-muted {
+    color: var(--text-color) !important;
+    opacity: 0.7;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='var(--toggler-icon-bg)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.flash-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent1);
+    color: var(--button-text);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.flash-message.show {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dark-mode .navbar {
+    background-color: var(--accent2) !important;
+}
+
+.dark-mode .card {
+    background-color: var(--jumbotron-bg);
+    color: var(--text-color);
+}
+
+.dark-mode .card-body {
+    background-color: var(--jumbotron-bg);
+    color: var(--text-color);
+}
+
+.dark-mode .footer {
+    background-color: var(--accent1) !important;
+    color: var(--button-text) !important;
+}
+
+.dark-mode .container {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+.dark-mode .form-control {
+    background-color: var(--jumbotron-bg);
+    color: var(--text-color);
+    border-color: var(--button-bg);
+}
+
+.dark-mode .text-muted {
+    color: var(--text-color) !important;
+    opacity: 0.7;
+}
+
+.modal {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal.is-active {
+    display: block;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: var(--accent1);
+    color: var(--button-text);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 1000;
+}
